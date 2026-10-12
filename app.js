@@ -39,7 +39,7 @@
   function getConfig() {
     try {
       const raw = localStorage.getItem(CONFIG_KEY);
-      if (!raw) return null;
+      if (!raw) return window.KAS_KELUAR_SUPABASE_CONFIG || null;
       const config = JSON.parse(raw);
       if (!config.url || !config.key) return null;
       return config;
